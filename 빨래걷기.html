@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>빨래 걷기</title>
+  <style>
+    body { background-image:url("media/마당.jpeg"); background-size:cover; }
+	a { position:fixed; left:20px; bottom:20px; }
+#box {
+      width:100px;
+      height:100px;
+      background-color:red;
+      position:absolute;
+      cursor:pointer;
+      transition:background-color 0.5s;
+     }
+
+      p { position:absolute;
+  	  top:50%;
+  	  left:50%;
+  	  transform:translate(-50%, -50%);
+	  background:lightgrey;
+	  border:3px double darkgrey;
+	  border-radius:10px;
+	}
+
+audio { position:fixed;
+	right:20px;
+	bottom:20px;
+      }
+
+  </style>
+</head>
+<body>
+<audio src="media/Walking.mp3" controls loop></audio>
+  <p id="score">점수: 0</p>
+
+  <script>
+    let score = 0;
+    let scoreDisplay = document.getElementById("score");
+    let container = document.body;
+
+    function createBox() {
+      let box = document.createElement("div");
+      box.id = "box";
+      container.appendChild(box);
+
+      box.addEventListener("click", function() {
+        score++;
+        scoreDisplay.innerHTML = "점수: " + score;
+
+        let randomColor = getRandomColor();
+        box.style.backgroundColor = randomColor;
+
+        let containerWidth = container.offsetWidth;
+        let containerHeight = container.offsetHeight;
+        let maxLeft = containerWidth - box.offsetWidth;
+        let maxTop = containerHeight - box.offsetHeight;
+
+        let randomLeft = getRandomInt(0, maxLeft);
+        let randomTop = getRandomInt(20, maxTop);
+
+        box.style.left = randomLeft + "px";
+        box.style.top = randomTop + "px";
+      });
+    }
+
+    function getRandomColor() {
+      let letters = "0123456789ABCDEF";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    for (let i = 0; i < 10; i++) {
+      createBox();
+    }
+  </script>
+<a href='기말과제.html'>돌아가기</a>
+</body>
+</html>

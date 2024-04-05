@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>도서관</title>
+  <style>
+     body { background-image:url("media/kyobo.png"); background-size:cover; }
+	a { position:fixed; right:20px; bottom:20px; }
+    .bookshelf {
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+    .book {
+      width:200px;
+      height:250px;
+      background-color:#f2f2f2;
+      border-radius:10px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      cursor:pointer;
+      overflow:hidden;
+      transition:transform 0.3s;
+    }
+    .book:hover {
+      transform:scale(1.05);
+    }
+    .book .content {
+      display:none;
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background-color:rgba(0, 0, 0, 0.8);
+      color:white;
+      padding:20px;
+      box-sizing:border-box;
+      text-align:center;
+    }
+  </style>
+</head>
+<body>
+  <div class="bookshelf">
+    <div class="book">
+      <div class="content">
+        <h2>유현준의 인문 건축 기행</h2>
+        <p>#생각을 깨우는 건축 여행 #유현준 교수</p>
+      </div>
+    </div>
+     <div class="book">
+      <div class="content">
+        <h2>하늘과 바람과 별과</h2>
+        <p>#물리학자 김상욱 #원자에서 인간까지 #과학은 교양</p>
+      </div>
+    </div>
+    <div class="book">
+      <div class="content">
+        <h2>세이노의 가르침</h2>
+        <p>#자기계발 #성공 #노력하라 #분노하라</p>
+      </div>
+    </div>
+    <div class="book">
+      <div class="content">
+        <h2>돌연한 출발</h2>
+        <p>#프란츠 카프카 #방랑자 #자유</p>
+      </div>
+    </div>
+    <div class="book">
+      <div class="content">
+        <h2>물고기는 존재하지 않는다</h2>
+        <p>#존재이유 #상실과 사랑 #삶의 질서</p>
+      </div>
+    </div>
+    <div class="book">
+      <div class="content">
+        <h2>구의 증명</h2>
+        <p>#죽음 #사랑의 가치</p>
+      </div>
+    </div>
+    <div class="book">
+      <div class="content">
+        <h2>열두 달 향신료 카레</h2>
+        <p>#향신료 #카레 #레시피</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const books = document.querySelectorAll('.book');
+    books.forEach(book => {
+      const content = book.querySelector('.content');
+      book.addEventListener('mouseenter', () => {
+        content.style.display = 'block';
+      });
+      book.addEventListener('mouseleave', () => {
+        content.style.display = 'none';
+      });
+    });
+  </script>
+<a href='기말과제.html'>돌아가기</a>
+</body>
+</html>

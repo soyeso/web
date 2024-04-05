@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>프랑스 인상주의 음악가 페이지에 대한 설문지</title>
+<style>
+.button {
+  display: inline-block;
+  background-color: #ff5f83;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+html, body {
+	margin : 0;
+	padding : 0;
+	height: 100%;
+}
+
+header {
+	background: #FAA68E;
+	border-style:dotted;
+	border-color:white;
+	border-radius:50px;
+	width: 100%; height: 15%;
+	text-align:center;
+}
+
+form {
+	background: #E04364;
+	border-style:dotted;
+	border-color:white;
+	border-radius:50px;
+	width: 100%; height: 70%;
+	margin: 10px 10px;
+	text-align: center;
+}
+
+footer {
+	background: #DD0AF5;
+	border-style:dotted;
+	border-color:white;
+	border-radius:50px;
+	width: 100%; height: 15%;
+	text-align:center;
+}
+
+h1 { text-align: center; }
+
+button { border-radius:50px; }
+</style>
+
+</head>
+<body>
+	<header>
+		<h1>설문지</h1>
+		<p>
+		프랑스 인상주의 작곡가들이 좋아지셨나요? 자유로운 의견을 적어주세요.
+		</p>
+	</header>
+	<form>
+		<span>학년</span>
+		<label><input type="radio" name="grade" value="1">1학년</label>
+		<label><input type="radio" name="grade" value="2">2학년</label>
+		<label><input type="radio" name="grade" value="3">3학년</label>
+		<label><input type="radio" name="grade" value="4">4학년</label>
+		<br><br>
+		
+		<span>성별</span>
+		<label><input type="radio" name="gender" value="5">남</label>
+		<label><input type="radio" name="gender" value="6">여</label>
+		<br><br>
+		
+		<span>관심 분야</span>
+		<select name="interest">
+			<option value="7">르네상스/바로크</option>
+			<option value="8">고전주의</option>
+			<option value="9">낭만주의</option>
+			<option value="10">인상주의</option>
+			<option value="11">신고전주의</option>
+			<option value="12">민족주의</option>
+		</select>
+		<br><br>
+
+		<span>해보고 싶은 악기</span>
+		<label><input type="checkbox" value="13">피아노</label>
+		<label><input type="checkbox" value="14">바이올린</label>
+		<label><input type="checkbox" value="15">첼로</label>
+		<label><input type="checkbox" value="16">플룻</label>
+		<label><input type="checkbox" value="17">오보에</label>
+		<label><input type="checkbox" value="18">클라리넷</label>
+		<label><input type="checkbox" value="19">비올라</label>
+		<label><input type="checkbox" value="20">호른</label>
+		<label><input type="checkbox" value="21">바순</label>
+		<label><input type="checkbox" value="22">트럼펫</label>
+		<label><input type="checkbox" value="23">트롬본</label>
+		<label><input type="checkbox" value="24">콘트라베이스</label>
+		<label><input type="checkbox" value="25">튜바</label><br><br>
+
+		<span>남기고 싶은 말</span> 
+		<textarea cols="50" rows="10" placeholder="글을 남겨주세요"></textarea>
+
+		<a href="기말과제.html" class="button">확인</a>
+	</form>
+	<footer>
+		<p>Thank you.</p>
+	</footer>
+</body>
+</html>

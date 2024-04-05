@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>울지마바보야</title>
+
+  <style>
+@keyframes background { 0%{ background:yellow; } 10%{ background:lawngreen; } 20%{ background:aqua; } 
+30%{ background:deeppink; } 40%{ background:fuchsia; } 50%{ background:#FF0000; } 60%{ background:lightslategray; } 70%{ background:mediumslateblue; } 80%{ background:springgreen; } 90%{ background:orangered; } 100%{ background:lightsteelblue; } }
+
+img { position:fixed; left:500px; right:500px; }
+
+a { position:fixed; left:20px; bottom:20px; }
+
+.bodyColor { animation-name:background; animation-duration:3s; animation-iteraion-count:infinite; }
+
+  </style>
+
+  <script>
+function changeColor() {
+  document.body.classList.add("bodyColor");
+}
+function backColor() {
+  document.body.classList.remove("bodyColor");
+}
+function over(obj) {
+  obj.src="media/notcrying.png";
+}
+function out(obj) {
+  obj.src="media/crying.png";
+}
+  </script>
+
+</head>
+
+<body>
+<img src="media/crying.png" alt="PePe" onmouseover="over(this); changeColor();" onmouseout="out(this); backColor();">
+<a href='기말과제.html'>돌아가기</a>
+</body>
+</html>

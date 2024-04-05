@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+<title>guessMyName</title>
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  color: blue;
+  font-size:1000%;
+  text-decoration: underline;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
+<script>
+function start() {
+let ret = prompt("이 페이지를 만든 사람은? 힌트: 앞뒤가똑같음");
+	if(ret == "소예소") {
+		alert("정답입니다!");
+		document.writeln("<p id='firstP'onclick='clickMe()'>Click!</p><br><a href='기말과제.html'>돌아가기</a>");
+	}	
+	else {
+		alert("취소되었습니다.");
+		document.write("<a href='기말과제.html'><p>돌아가기</p></a>");
+	}
+}
+
+function clickMe() {
+	let p = document.getElementById("firstP");
+	p.innerHTML= "<img id='coin' src='media/coin.png'>";
+	}
+</script>
+</head>
+
+<body>
+<script>
+start();
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    a {
+      position:fixed;
+      left:20px;
+      bottom:20px;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image:url("media/google.png");
+      background-size:cover;
+    }
+
+    #searchForm {
+      text-align: center;
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+    }
+
+    #searchInput {
+      width: 300px;
+      border:2px solid lightgrey;
+      border-radius:50px;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    input:hover {
+      background:lightgrey;
+    }
+
+    #searchButton {
+      border:1px hidden white;
+      background:white;
+      cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="searchForm">
+    <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+    <button id="searchButton"><img src="media/돋보기.png"></button>
+  </div>
+
+  <script>
+    let searchButton = document.getElementById("searchButton");
+    let searchInput = document.getElementById("searchInput");
+
+    searchButton.addEventListener("click", function() {
+      let keyword = searchInput.value;
+      if (keyword.trim() !== "") {
+        let searchUrl = "https://www.google.com/search?q=" + encodeURIComponent(keyword);
+        window.open(searchUrl, "_blank");
+      }
+    });
+  </script>
+<a href="기말과제.html">돌아가기</a>
+</body>
+</html>

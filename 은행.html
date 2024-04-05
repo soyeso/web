@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>은행</title>
+<style>
+body { background:url("media/money.jpg") }
+#coin {
+  width: 100px; height:100px;
+  cursor: pointer;
+  display: inline-block;
+  margin-left:75px;
+}
+
+.center { position:absolute;
+  	  top:50%;
+  	  left:50%;
+  	  transform:translate(-50%, -50%);
+	  background:lightgrey;
+	  border:3px double darkgrey;
+	  border-radius:10px;
+	}
+</style>
+<script>
+function Account(owner, code, balance) {
+		this.owner = owner;
+		this.code = code;
+		this.balance = balance;
+	}
+</script>
+</head>
+<body>
+<div class="center">
+<img id='coin' src='media/coin.png'>
+<p id="balance">Balance: 0</p>
+
+<form id="withdrawForm">
+  <label for="amount">금액: </label>
+  <input type="number" id="amount" name="amount" min="0">
+  <button type="submit">출금</button>
+</form>
+</div>
+
+<script>
+
+let coin = document.getElementById('coin');
+let balance = 0;
+
+coin.addEventListener('click', function() {
+  balance += 1000;
+  document.getElementById('balance').textContent = 'Balance: ' + balance + '원';
+});
+
+document.getElementById('withdrawForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  
+  let amountInput = document.getElementById('amount');
+  let amount = parseInt(amountInput.value);
+  
+  if (amount <= balance) {
+    balance -= amount;
+    updateBalance();
+    amountInput.value = '';
+  } else {
+    alert('잔액이 부족합니다.');
+  }
+});
+
+function updateBalance() {
+  document.getElementById('balance').textContent = 'Balance: ' + balance + '원';
+}
+</script>
+<a href='기말과제.html'>돌아가기</a>
+</body>
+</html>
